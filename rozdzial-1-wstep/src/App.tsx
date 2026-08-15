@@ -1,9 +1,20 @@
 import { Sun } from 'lucide-react'
 import './App.css'
+import type { ProjectCardProps } from './models/ProjectCardProps'
+import { ProjectCard } from './components/ProjectCard'
+
+const projectData: ProjectCardProps = {
+  title: "Pierwszy projekt",
+  description: "Pierwszy projekt wakacyjnego wyzwania 2026",
+  technologies: [
+    { id: crypto.randomUUID(), name: "React" },
+    { id: crypto.randomUUID(), name: "TypeScript" },
+    { id: crypto.randomUUID(), name: "Next.js" },
+    { id: crypto.randomUUID(), name: "Tailwind CSS" }
+  ]
+}
 
 function App() {
-  
-
   return (
     <>
       <header className="bg-sky-50 text-center my-24 p-12 rounded-3xl mx-auto max-w-screen-lg">
@@ -13,12 +24,9 @@ function App() {
       <main className='flex justify-center items-center text-center py-16 px-8'>
         <section className='flex flex-col justify-center items-center border border-gray-200 rounded-lg p-16 shadow-sm w-full max-w-3xl'>
           <h2>Zadanie domowe</h2>
-
+          <ProjectCard {...projectData} />
         </section>
       </main>
-
-
-
     </>
   )
 }
